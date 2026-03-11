@@ -15,7 +15,7 @@ public class StoreService {
     @Autowired private StoreRepository storeRepository;
 
     // 전체 조회
-    public List<StoreDto> findAll(){
+    public List<StoreDto> getStores(){
         List<StoreEntity> storeEntityList=storeRepository.findAll();
         List<StoreDto> storeDtoList=new ArrayList<>();
         storeEntityList.forEach(entity->{
