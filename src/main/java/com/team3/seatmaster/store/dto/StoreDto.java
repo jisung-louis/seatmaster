@@ -1,7 +1,5 @@
 package com.team3.seatmaster.store.dto;
 
-import com.team3.seatmaster.store.entity.StoreEntity;
-import com.team3.seatmaster.user.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,19 +21,4 @@ public class StoreDto {
     private String create_date;
     private String update_date;
 
-    public StoreEntity toEntity(UserEntity owner){
-        return StoreEntity.builder()
-                .no(no)
-                .owner(owner)
-                .name(name)
-                .category(category)
-                .address(address)
-                .contact(contact)
-                .email(email)
-                .bh_weekdays(bh_weekdays)
-                .bh_saturday(bh_saturday)
-                .bh_sunday(bh_sunday)
-                .status(status)
-                .build();
-    }
 }

@@ -1,6 +1,5 @@
 package com.team3.seatmaster.store.entity;
 
-import com.team3.seatmaster.store.dto.StoreDto;
 import com.team3.seatmaster.user.entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,6 +28,4 @@ public class StoreEntity {
     private String bh_saturday;
     private String bh_sunday;
     private Integer status;
-
-
 }
