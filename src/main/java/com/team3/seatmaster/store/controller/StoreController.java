@@ -30,7 +30,7 @@ public class StoreController {
 
      // 내 매장 조회 getMyStores
      @GetMapping("/mystores")
-     public StoreDto getMyStores(@RequestParam int no) {
+     public StoreDto getMyStores(@RequestParam Long no) {
           StoreDto result = storeService.getMyStores(no);
           return result;
      }
@@ -54,7 +54,7 @@ public class StoreController {
      // 매장 수정 updateStore
      @PutMapping
      public boolean updateStore(@RequestBody StoreDto storeDto){
-          boolean result = storeService.upDateStore(storeDto);
+          boolean result = storeService.updateStore(storeDto);
           return result;
      }
 
