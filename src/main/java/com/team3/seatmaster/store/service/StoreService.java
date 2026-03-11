@@ -105,8 +105,15 @@ public class StoreService {
     public boolean addStore(StoreDto storeDto){
         StoreEntity storeEntity = new StoreEntity();
         storeEntity.setNo(storeDto.getNo());
-        storeDto.setOwner_no(storeDto.getOwner_no());
+
+        Optional<UserEntity> userOptional = userRepository.findById(storeDto.getOwner_no());
+        if(userOptional.isEmpty()){
+            return false;
+        }
+        UserEntity owner = userOptional.get();
+
         storeEntity.setName(storeDto.getName());
+        storeEntity.setOwner(owner);
         storeEntity.setCategory(storeDto.getCategory());
         storeEntity.setAddress(storeDto.getAddress());
         storeEntity.setContact(storeDto.getContact());
