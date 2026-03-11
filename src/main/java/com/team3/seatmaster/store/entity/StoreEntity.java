@@ -1,5 +1,6 @@
 package com.team3.seatmaster.store.entity;
 
+import com.team3.seatmaster.BaseTime;
 import com.team3.seatmaster.user.entity.UserEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @Table(name = "store")
-public class StoreEntity {
+public class StoreEntity extends BaseTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer no;
