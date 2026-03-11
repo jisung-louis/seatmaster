@@ -46,7 +46,12 @@ public class StoreService {
     }
 
     // 매장 삭제
-    public boolean deleteStore(StoreDto storeDto){
-        
+    public boolean deleteStore(int no){
+        Optional<StoreEntity> optional=storeRepository.findById(no);
+        if(optional.isPresent()){
+            storeRepository.deleteById(no);
+            return true;
+        }
+        return false;
     }
 }
