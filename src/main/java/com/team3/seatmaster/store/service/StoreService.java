@@ -15,7 +15,7 @@ public class StoreService {
     @Autowired private StoreRepository storeRepository;
 
     // 전체 조회
-    public List<StoreDto> findAll(){
+    public List<StoreDto> getStores(){
         List<StoreEntity> storeEntityList=storeRepository.findAll();
         List<StoreDto> storeDtoList=new ArrayList<>();
         storeEntityList.forEach(entity->{
@@ -46,7 +46,12 @@ public class StoreService {
     }
 
     // 매장 삭제
-    public boolean deleteStore(StoreDto storeDto){
-        
+    public boolean deleteStore(int no){
+        Optional<StoreEntity> optional=storeRepository.findById(no);
+        if(optional.isPresent()){
+            storeRepository.deleteById(no);
+            return true;
+        }
+        return false;
     }
 }
