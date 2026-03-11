@@ -16,8 +16,8 @@ public class StoreController {
 
      // 등록 등록 addStore
      @PostMapping
-     public boolean addStore(@RequestBody Store store) {
-          boolean result = storeService.addStore();
+     public boolean addStore(@RequestBody StoreDto storeDto) {
+          boolean result = storeService.addStore(storeDto);
           return result;
      }
 

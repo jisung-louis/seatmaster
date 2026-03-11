@@ -54,4 +54,26 @@ public class StoreService {
         }
         return false;
     }
+
+    // 매장 등록
+    public boolean addStore(StoreDto storeDto){
+        StoreEntity storeEntity = new StoreEntity();
+        storeEntity.setNo(storeDto.getNo());
+        storeDto.setOwner_no(storeDto.getOwner_no());
+        storeEntity.setName(storeDto.getName());
+        storeEntity.setCategory(storeDto.getCategory());
+        storeEntity.setAddress(storeDto.getAddress());
+        storeEntity.setContact(storeDto.getContact());
+        storeEntity.setEmail(storeDto.getEmail());
+        storeEntity.setBh_weekdays(storeDto.getBh_weekdays());
+        storeEntity.setBh_saturday(storeDto.getBh_saturday());
+        storeEntity.setBh_sunday(storeDto.getBh_sunday());
+        storeEntity.setStatus(storeDto.getStatus());
+
+        StoreEntity savedStoreEntity = storeRepository.save(storeEntity);
+        if(savedStoreEntity.getNo() >= 1){
+            return true;
+        }
+        return false;
+    }
 }
