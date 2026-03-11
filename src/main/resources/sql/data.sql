@@ -1,4 +1,4 @@
-INSERT INTO user (no, id, password, name, isAdmin)
+INSERT INTO user (no, id, password, name, is_admin)
 VALUES (1, 'admin', '1234', '관리자', true),
        (2, 'hong_gd', 'pass1', '홍길동', false),
        (3, 'kim_chul', 'pass2', '김철수', false),
@@ -14,7 +14,7 @@ VALUES (1, 'admin', '1234', '관리자', true),
 INSERT INTO store (no, name, category, owner_no, address, contact, email, bh_weekdays, bh_saturday, bh_sunday, status)
 VALUES (1, '스타벅스 강남점', '카페', 2, '서울시 강남구', '02-111-1111', 'star_kangnam@test.com', '07:00-22:00', '08:00-22:00',
         '09:00-21:00', 1),
-       (1, '맥도날드 홍대점', '패스트푸드', 1, '서울시 마포구', '02-222-2222', 'mac_hong@test.com', '24시간', '24시간', '24시간', 1),
+       (2, '맥도날드 홍대점', '패스트푸드', 1, '서울시 마포구', '02-222-2222', 'mac_hong@test.com', '24시간', '24시간', '24시간', 1),
        (3, 'BBQ 치킨 역삼점', '치킨', 3, '서울시 강남구', '02-333-3333', 'bbq_yeok@test.com', '12:00-24:00', '12:00-01:00',
         '12:00-23:00', 1),
        (4, '김밥천국 종로점', '분식', 3, '서울시 종로구', '02-444-4444', 'gim_jong@test.com', '06:00-21:00', '06:00-20:00', '휴무', 1),
@@ -32,7 +32,7 @@ VALUES (1, '스타벅스 강남점', '카페', 2, '서울시 강남구', '02-111
         '09:00-20:00', 1);
 
 -- C. Seat 데이터
-INSERT INTO seat (code, store_no, colcode, rownum, status)
+INSERT INTO seat (code, store_no, column_code, row_no, status)
 VALUES ('1-A-3', 1, 'A', '3', 0),
        ('1-A-4', 1, 'A', '4', 0),
        ('1-A-5', 1, 'A', '5', 0),
@@ -53,11 +53,11 @@ VALUES ('1-A-3', 1, 'A', '3', 0),
        ('3-B-1', 3, 'B', '1', 0);
 
 -- D. Reservation 데이터
-INSERT INTO reservation (no, user_no, seat_code, reservedAt)
+INSERT INTO reservation (no, user_no, seat_code, reserved_at)
 VALUES (1, 1, '1-A-3', '2026-02-01 14:00:00'),
        (2, 2, '1-A-4', '2026-02-01 14:00:00'),
        (3, 3, '1-A-5', '2026-02-01 14:00:00'),
-       (4, 4, '1-fA-6', '2026-02-01 14:00:00'),
+       (4, 4, '1-A-6', '2026-02-01 14:00:00'),
        (5, 1, '1-A-7', '2026-02-01 14:00:00'),
        (6, 1, '1-B-1', '2026-02-01 14:00:00'),
        (7, 5, '1-B-2', '2026-02-02 10:00:00'),
