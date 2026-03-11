@@ -16,13 +16,5 @@ public class ReservationDto {
     private String seat_code;
     private String createDate;
 
-    public ReservationEntity toEntity() {
-        return ReservationEntity
-                .builder()
-                .user_no(user_no)
-                .seat_code(seat_code)
-                .build();
-    }
-
 
 }

@@ -21,8 +21,6 @@ public class ReservationEntity extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer no;
 
-    private Integer user_no;
-    private String seat_code;
     private String reservedAt;
 
     @ManyToOne
@@ -33,13 +31,5 @@ public class ReservationEntity extends BaseTime {
     @JoinColumn(name = "seat_code")
     private SeatEntity seat;
 
-    public ReservationDto toDto() {
-        return ReservationDto
-                .builder()
-                .no(no)
-                .user_no(user_no)
-                .seat_code(seat_code)
-                .createDate(getCreateDate().toString())
-                .build();
-    }
+
 }
