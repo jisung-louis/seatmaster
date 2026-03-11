@@ -17,7 +17,7 @@ public class StoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer no;
-    @ManyToOne @JoinColumn(name = "user_no")
+    @ManyToOne @JoinColumn(name = "owner_no")
     private UserEntity owner;
     private String name;
     private String category;
