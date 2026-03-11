@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 @Entity
-@Table("seat")
+@Table(name = "seat")
 public class SeatEntity extends BaseTime {
     @Id
     private String code;
