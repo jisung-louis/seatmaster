@@ -31,7 +31,7 @@ public class StoreController {
      // 내 매장 조회 getMyStores
      @GetMapping("/mystores")
      public StoreDto getMyStores(@RequestParam int no) {
-          List<StoreDto> result = storeService.getMyStores(no);
+          StoreDto result = storeService.getMyStores(no);
           return result;
      }
 
@@ -39,7 +39,7 @@ public class StoreController {
      // 특정 매장 정보 조회 getStore
      @GetMapping("/detail")
      public StoreDto getStore(@RequestParam int no) {
-          List<StoreDto> result = storeService.getStore(no);
+          StoreDto result = storeService.getStore(no);
           return result;
      }
 
