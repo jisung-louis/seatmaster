@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data @AllArgsConstructor @NoArgsConstructor @Builder
 public class StoreDto {
     private Integer no;
-    private Integer owner_no;
+    private Long owner_no;
     private String name;
     private String category;
     private String address;
