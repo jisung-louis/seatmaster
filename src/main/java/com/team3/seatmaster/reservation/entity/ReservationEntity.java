@@ -1,4 +1,45 @@
 package com.team3.seatmaster.reservation.entity;
 
-public class ReservationEntity {
+import com.team3.seatmaster.BaseTime;
+import com.team3.seatmaster.reservation.dto.ReservationDto;
+import com.team3.seatmaster.seat.entity.SeatEntity;
+import com.team3.seatmaster.user.entity.UserEntity;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
+@Entity
+@Table(name = "reservation")
+public class ReservationEntity extends BaseTime {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer no;
+
+    private Integer user_no;
+    private String seat_code;
+    private String reservedAt;
+
+    @ManyToOne
+    @JoinColumn(name = "user_no")
+    private UserEntity user;
+
+    @ManyToOne
+    @JoinColumn(name = "seat_code")
+    private SeatEntity seat;
+
+    public ReservationDto toDto() {
+        return ReservationDto
+                .builder()
+                .no(no)
+                .user_no(user_no)
+                .seat_code(seat_code)
+                .createDate(getCreateDate().toString())
+                .build();
+    }
 }
