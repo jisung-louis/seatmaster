@@ -30,6 +30,4 @@ public class ReservationEntity extends BaseTime {
     @ManyToOne
     @JoinColumn(name = "seat_code")
     private SeatEntity seat;
-
-
 }
